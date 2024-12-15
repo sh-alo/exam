@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+<div class="container mt-3">
+    <h2>Prouducts Table</h2>
+    <table class="table table-bordered">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Catogory</td>
+            <td>Actions</td>
+        </tr>
+        <tr>
+            <td>{{ob.id}}</td>
+            <td>{{ob.name}}</td>
+            <td>{{ob.price}}</td>
+            <td>{{ob.quantity}}</td>
+            <td>{{ob.category.name}}</td>
+            <td><a type="button" class="btn btn-outline-danger" href='{% url "delete" ob.id %}'>Delete</a>
+                <a type="button" class="btn btn-secondary" href='{% url "edit" ob.id %}'>Edit</a>
+            
+            </td>
+            
+        </tr>
+
+
+    </table>
+  </div>
+
+
+
+{% endblock content %}
+
+
+
+
+
